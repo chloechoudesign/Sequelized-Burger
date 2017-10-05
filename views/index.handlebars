@@ -1,0 +1,74 @@
+<div class="container">
+
+  <div class="jumbotron">
+
+    <h1><span class="glyphicon glyphicon-fire"></span> Eat Da Burger</h1>
+    <hr>
+    <h3>Add a Burger</h3>
+      <form class="create-update-form" action="/" method="POST">
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="burger_name">
+        </div>
+        <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-credit-plus"></span> Place Order</button>
+      </form>
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-6">
+      <h2>Order List</h2>
+
+      <ul class="list-group">
+          {{#each burgers}}
+          {{#unless this.devoured}}
+          <li class="list-group-item">
+            <h4>{{this.burger_name}}</h4>
+
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="true">
+              <button class="btn btn-danger" type="submit">Devour it!</button>
+            </form>
+          </li>
+          {{/unless}}
+          {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-lg-6">
+      <h2>Devoured</h2>
+
+      <ul class="list-group">
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <li class="list-group-item">
+             <h4>{{this.burger_name}}</h4>
+
+             <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="false">
+              <button class="btn btn-primary" type="submit">Order again</button>
+             </form>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p><a href="#"><a href="https://github.com/chloechoudesign/Eat-Da-Burger">GitHub Repo</a></p>
+    </div>
+  </footer>
+
+
+</div>
+
+
+
+
+
+
+
+
+
