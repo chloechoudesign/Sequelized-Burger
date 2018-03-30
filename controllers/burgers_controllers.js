@@ -6,8 +6,6 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
 
     db.Burger.findAll({}).then(function(dbBurger) {
-      // console.log(dbBurger);
-      // res.json(dbBurger);
       var hbsObject = {
         burgers: dbBurger
       };
