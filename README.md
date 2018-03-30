@@ -1,4 +1,5 @@
 # Sequelized-Burger
+<<<<<<< HEAD
 
 ## Overview
 - Sequelized Burger App is a remake of the Eat Da Burger repo. This burger logger utilizing Node, Express, Handlebars, and the Sequelize ORM. Following the MVC design pattern, Node and Sequelize will route data while Handlebars generates HTML.
@@ -26,3 +27,6 @@
 <br/>
 <img width="600" alt="24" src="https://user-images.githubusercontent.com/28972721/38135495-40de60e0-33cd-11e8-8fd4-b24e3fe71e75.png">
 
+=======
+Heroku: https://secure-dusk-12276.herokuapp.com/
+>>>>>>> 2efc54f3376fe7def54aa5f972c15861fae45370
